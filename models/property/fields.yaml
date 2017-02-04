@@ -1,0 +1,20 @@
+fields:
+    name:
+        label: 'mavitm.estate::lang.property.title'
+        span: auto
+        required: 1
+        type: text
+    value:
+        label: 'mavitm.estate::lang.property.values'
+        span: auto
+        required: 1
+        type: text
+    iconcss:
+        label: 'mavitm.estate::lang.property.iconcs'
+        span: auto
+        type: text
+    sort_order:
+        label: 'mavitm.estate::lang.property.sortOrder'
+        span: auto
+        required: 1
+        type: number

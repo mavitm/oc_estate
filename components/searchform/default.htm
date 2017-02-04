@@ -1,0 +1,51 @@
+{{ form_open({ class: 'form-horizontal', url: __SELF__.categoryPage, method: 'GET' }) }}
+
+{% set l = __SELF__.langs %}
+    <div class="row">
+
+        <div class="col-md-3 col-xs-6">
+            <select name="category" class="form-control">
+                <option value="">Select</option>
+                {% if __SELF__.categories %}
+                    {% for c in categories %}
+                        <option value="{{ c.id }}">{{ c.title }}</option>
+                    {% endfor %}
+                {% endif %}
+            </select>
+        </div>
+
+        <div class="col-md-3 col-xs-6">
+            <select name="status" class="form-control">
+                <option value="">Select</option>
+                {% if __SELF__.status %}
+                    {% for key, c in status %}
+                        <option value="{{ key }}">{{ c }}</option>
+                    {% endfor %}
+                {% endif %}
+            </select>
+        </div>
+
+        <div class="clearfix form-group visible-xs visible-sm"></div>
+
+        <div class="col-md-6">
+            <input type="text" name="tags" placeholder="{{ 'Search by state, suburb or postcode'|_ }}" class="form-control" />
+        </div>
+
+        <div class="clearfix form-group"></div>
+
+        <div class="col-md-3 col-xs-6">
+            <input type="number" name="price[]" class="form-control" placeholder="min price">
+        </div>
+
+        <div class="col-md-3 col-xs-6">
+            <input type="number" name="price[]" class="form-control" placeholder="max price">
+        </div>
+
+        <div class="clearfix form-group visible-xs visible-sm"></div>
+
+        <div class="col-md-6">
+            <button type="submit" class="btn btn-success btn-block"><i class="fa fa-search"></i></button>
+        </div>
+
+    </div>
+{{ form_close() }}

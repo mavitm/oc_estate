@@ -1,0 +1,12 @@
+{% if __SELF__.childs %}
+    <ul class="category-list list-group">
+        {% for category in __SELF__.childs %}
+            <li class="list-group-item">
+                <a href="{{ category.url }}">{{ category.title }}</a>
+                {% if __SELF__.countSub %}
+                    <span class="badge">{{ category.count_realty }}</span>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+{% endif %}

@@ -1,0 +1,90 @@
+$bodyColor          : #EBEBEB;
+$renk1              : #222222; /*RENK1*/
+$renk1K             : #000000; /*RENK1 KOYU*/
+$renk1A             : #333333; /*RENK1 ACIK*/
+
+$renk2              : #0966AC; /*RENK1*/
+$renk2K             : #1C4C96; /*RENK1 KOYU*/
+$renk2A             : #0966AC; /*RENK1 ACIK*/
+
+$aColor             : #1C4C96;
+$blackTransparanBg  : url("../images/benuActiveBg.png");
+
+$headYukseklik : auto; /*265px olmali*/
+
+@mixin font1(){
+  font-family: 'Oswald', sans-serif;
+}
+
+@mixin font2(){
+  font-family: 'Ubuntu', sans-serif;
+}
+
+@mixin borderRadius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin topRadius($radius){
+  -webkit-border-radius: $radius $radius 0 0;
+  -moz-border-radius: $radius $radius 0 0;
+  -ms-border-radius: $radius $radius 0 0;
+  border-radius: $radius $radius 0 0;
+}
+
+@mixin bottomRadius($radius){
+  -webkit-border-radius: 0 0 $radius $radius;
+  -moz-border-radius: 0 0 $radius $radius;
+  -ms-border-radius: 0 0 $radius $radius;
+  border-radius: 0 0 $radius $radius;
+}
+
+@mixin leftRadius($radius){
+  -webkit-border-radius: $radius 0 0 $radius;
+  -moz-border-radius: $radius 0 0 $radius;
+  -ms-border-radius: $radius 0 0 $radius;
+  border-radius: $radius 0 0 $radius;
+}
+
+@mixin rightRadius($radius){
+  -webkit-border-radius: 0 $radius $radius 0;
+  -moz-border-radius: 0 $radius $radius 0;
+  -ms-border-radius: 0 $radius $radius 0;
+  border-radius: 0 $radius $radius 0;
+}
+
+@mixin borderBox() {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+@mixin  skew($skew){
+  -moz-transform: scale(1) rotate(0deg) translateX(0px) translateY(0px) skewX($skew) skewY(0deg);
+  -webkit-transform: scale(1) rotate(0deg) translateX(0px) translateY(0px) skewX($skew) skewY(0deg);
+  -o-transform: scale(1) rotate(0deg) translateX(0px) translateY(0px) skewX($skew) skewY(0deg);
+  -ms-transform: scale(1) rotate(0deg) translateX(0px) translateY(0px) skewX($skew) skewY(0deg);
+  transform: scale(1) rotate(0deg) translateX(0px) translateY(0px) skewX($skew) skewY(0deg);
+}
+
+@mixin gradient-horizontal($start-color: #555, $end-color: #333, $start-percent: 0%, $end-percent: 100%) {
+  background-image: -webkit-linear-gradient(left, $start-color $start-percent, $end-color $end-percent); // Safari 5.1-6, Chrome 10+
+  background-image: -o-linear-gradient(left, $start-color $start-percent, $end-color $end-percent); // Opera 12
+  background-image: linear-gradient(to right, $start-color $start-percent, $end-color $end-percent); // Standard, IE10, Firefox 16+, Opera 12.10+, Safari 7+, Chrome 26+
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($start-color)}', endColorstr='#{ie-hex-str($end-color)}', GradientType=1); // IE9 and down
+}
+
+// Vertical gradient, from top to bottom
+//
+// Creates two color stops, start and end, by specifying a color and position for each color stop.
+// Color stops are not available in IE9 and below.
+@mixin gradient-vertical($start-color: #555, $end-color: #333, $start-percent: 0%, $end-percent: 100%) {
+  background-image: -webkit-linear-gradient(top, $start-color $start-percent, $end-color $end-percent);  // Safari 5.1-6, Chrome 10+
+  background-image: -o-linear-gradient(top, $start-color $start-percent, $end-color $end-percent);  // Opera 12
+  background-image: linear-gradient(to bottom, $start-color $start-percent, $end-color $end-percent); // Standard, IE10, Firefox 16+, Opera 12.10+, Safari 7+, Chrome 26+
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($start-color)}', endColorstr='#{ie-hex-str($end-color)}', GradientType=0); // IE9 and down
+}

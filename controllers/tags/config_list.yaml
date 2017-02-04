@@ -1,0 +1,14 @@
+title: Tags
+modelClass: Mavitm\Estate\Models\Tag
+list: $/mavitm/estate/models/tag/columns.yaml
+noRecordsMessage: 'backend::lang.list.no_records'
+recordsPerPage: '50'
+showSetup: true
+showCheckboxes: true
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+defaultSort:
+    column: created_at
+    direction: desc

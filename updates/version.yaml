@@ -1,0 +1,17 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Created table mavitm_estate_realty'
+    - builder_table_create_mavitm_estate_realty.php
+1.0.3:
+    - 'Created table mavitm_estate_tags'
+    - builder_table_create_mavitm_estate_realty_tags.php
+1.0.4:
+    - 'Created table mavitm_estate_categories'
+    - builder_table_create_mavitm_estate_categories.php
+1.0.5:
+    - 'Created table mavitm_estate_realty_tag'
+    - builder_table_create_mavitm_estate_realty_tag.php
+1.0.6:
+    - 'Created table mavitm_estate_realty_properties'
+    - builder_table_create_mavitm_estate_realty_properties.php

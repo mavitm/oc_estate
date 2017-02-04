@@ -1,0 +1,20 @@
+title: 'mavitm.estate::lang.plugin.name'
+modelClass: Mavitm\Estate\Models\Realty
+list: $/mavitm/estate/models/realty/columns.yaml
+recordUrl: 'mavitm/estate/realties/update/:id'
+noRecordsMessage: 'backend::lang.list.no_records'
+
+recordsPerPage: '15'
+showSetup: true
+showCheckboxes: true
+
+defaultSort:
+    column: created_at
+    direction: desc
+
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+
+filter: config_filter.yaml

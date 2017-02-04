@@ -1,0 +1,9 @@
+# ===================================
+#  Relation Behavior Config
+# ===================================
+
+properties:
+    label: mavitm.estate::lang.realty.properties
+    list: ~/plugins/mavitm/estate/models/property/columns.yaml
+    form: ~/plugins/mavitm/estate/models/property/fields.yaml
+    emptyMessage: backend::lang.list.no_records

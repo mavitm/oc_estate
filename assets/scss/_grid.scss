@@ -1,0 +1,472 @@
+@import "_variable";
+
+/** GALERI**/
+
+/** GLOBAL **/
+.mygrid {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: auto;
+  margin-bottom: 30px;
+
+  .gsHead {
+    width: 100%;
+    min-height: 80px;
+    overflow: hidden;
+    position: relative;
+  }
+  .gsHead.galeriHead {
+    height: 180px;
+    overflow: hidden;
+  }
+  .gsHead img {
+    width: 100%;
+  }
+
+  .gsHead .gsAdded {
+    width: 50px;
+    height: 50px;
+    background-color: $renk1;
+    position: absolute;
+    left: 0;
+    top: 15px;
+    color: #ffffff;
+    text-align: center;
+    font-family: 'Tenor Sans', sans-serif;
+    padding-top: 8px;
+  }
+  .gsHead .gsAdded span {
+    display: block;
+    font-size: 24px;
+    margin: 0;
+    padding: 0;
+    line-height: 20px;
+  }
+  .gsHead .gsAdded span:last-child {
+    font-size: 12px;
+  }
+
+  .gsMain, .gsFooter {
+    padding: 15px;
+  }
+
+  .gsMain h1,
+  .gsMain h2,
+  .gsMain h3,
+  .gsMain h4 {
+    font-size: 18px;
+    font-family: 'Play', sans-serif;
+    margin: 0 0 10px 0;
+    padding: 0;
+  }
+  .gsFooter .gsView, .mygrid .gsFooter .gsMore {
+    width: 50%;
+    float: left;
+  }
+  .gsFooter .gsMore {
+    text-align: right;
+    clear: right;
+    &.gsShop{
+      i{  @include borderRadius(10px); background-color: $renk1; padding: 8px;  color: #FFFFFF; }
+    }
+  }
+
+  .gsFooter .socialIcons {
+    display: inline-block;
+  }
+  .gsFooter .socialIcons li {
+    overflow: hidden;
+    float: left;
+    text-align: center;
+  }
+  .gsFooter .socialIcons li a {
+    background-color: #D1D1D1;
+    color: #ffffff;
+    margin-right: 4px;
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+    font-size: 1.3333em;
+  }
+  .gsFooter .socialIcons li:hover a {
+    background-color: $renk1;
+  }
+  .gsFooter .socialIcons li:hover a i {
+    animation: 0.3s ease 0s normal forwards 1 running tada;
+  }
+
+  .gridPrice{
+    font-size: 18px; color: $renk1;
+    i{color: #000000;}
+    .oldPrice{font-size: 14px; color: #000000; text-decoration:line-through;}
+  }
+
+  * {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+}
+
+/***********/
+
+/* PLUGINS */
+.mygridFborder .text-center {
+  text-align: center;
+}
+
+.mygridFborder .gsFooter {
+  border-top: 1px solid #D1D1D1;
+}
+
+.mygridborderBottom {
+  border-bottom: 5px solid $renk2K !important;
+}
+
+.mygridborderBottomRed {
+  border-bottom: 5px solid $renk1K !important;
+}
+
+.mygrid.thisismy .gsHead img:hover {
+  animation: 0.3s ease 0s normal forwards 1 running pulse;
+}
+
+.noDate .gsHead .gsAdded {
+  display: none;
+}
+
+.owl-grids .owl-wrapper-outer .item {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.owl-wrapper-outer .item .mygrid {
+  margin-bottom: 0;
+}
+
+/***********/
+
+/*Normal*/
+.mygrid.gstyle a {
+  color: $renk1;
+}
+
+/***********/
+
+/* 1.Style */
+.mygrid.gstyle1 {
+  background-color: #ffffff;
+  border: 1px solid #D1D1D1;
+  a {
+    color: $renk1;
+  }
+  .department {
+    border-bottom: 1px solid #D1D1D1;
+    padding-bottom: 10px;
+  }
+}
+
+/***********/
+
+/* 2.Style */
+.mygrid.gstyle2 {
+  background-color: #ffffff;
+  border: 1px solid #D1D1D1;
+  a {
+    color: $renk1;
+  }
+  .gsFooter {
+    border-top: 1px solid #D1D1D1;
+  }
+}
+
+/***********/
+
+/* 3.Style */
+.mygrid.gstyle3 {
+  background-color: #ffffff;
+  border: 1px solid #D1D1D1;
+  a {
+    color: $renk1;
+  }
+  .gsFooter {
+    display: none;
+  }
+}
+
+/***********/
+
+/* 4.Style */
+.mygrid.gstyle4 {
+  background-color: #ffffff;
+  border: 1px solid #D1D1D1;
+  a {
+    color: $renk1;
+  }
+  .gsFooter {
+    display: none;
+  }
+  .gsMain p {
+    display: none;
+  }
+}
+
+/***********/
+
+/* 5.Style */
+.mygrid.gstyle5 {
+  background-color: #ffffff;
+  border: 1px solid #D1D1D1;
+  a {
+    color: $renk1;
+  }
+  .gsFooter {
+    display: none;
+  }
+  .gsMain {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    overflow: hidden;
+    background: $blackTransparanBg;
+  }
+  .gsMain h1 {
+    margin: 0;
+  }
+  .gsMain h1 a {
+    display: block;
+    color: #ffffff;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  .gsMain p {
+    display: none;
+  }
+}
+
+/***********/
+
+/* 6.Style */
+.mygrid.gstyle6 {
+  background-color: #ffffff;
+  border: 1px solid #D1D1D1;
+  a {
+    color: $renk1;
+  }
+  .gsHead {
+    width: 50%;
+    min-height: 80px;
+    overflow: hidden;
+    position: relative;
+  }
+  .gsMain,
+  .gsFooter {
+    width: 50%;
+    position: absolute;
+    right: 0;
+  }
+  .gsMain {
+    top: 0;
+  }
+  .gsFooter {
+    bottom: 0;
+  }
+
+}
+
+/***********/
+
+/* 7.Style */
+.mygrid.gstyle7 {
+  background-color: #ffffff;
+  border: 1px solid #D1D1D1;
+  a {
+    color: $renk1;
+  }
+  .gsHead {
+    width: 50%;
+    min-height: 80px;
+    overflow: hidden;
+    position: relative;
+  }
+  .gsMain,
+  .gsFooter {
+    width: 50%;
+    position: absolute;
+    right: 0;
+  }
+  .gsMain {
+    top: 0;
+  }
+  .gsMain p {
+    display: none;
+  }
+  .gsFooter {
+    bottom: 0;
+  }
+}
+
+/***********/
+
+/* 8.Style */
+.mygrid.gstyle8 {
+  background-color: #ffffff;
+  border: 1px solid #D1D1D1;
+  a {
+    color: $renk1;
+  }
+  .gsHead {
+    width: 50%;
+    min-height: 80px;
+    float: right;
+    overflow: hidden;
+    position: relative;
+  }
+  .gsHead .gsAdded {
+    position: absolute;
+    top: 0;
+  }
+  .gsMain,
+  .gsFooter {
+    width: 50%;
+  }
+  .gsFooter {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+  }
+}
+
+/***********/
+
+/** 9. style **/
+.mygrid.gstyle9 {
+  background-color: #ffffff;
+  border: 1px solid #D1D1D1;
+  a {
+    color: $renk1;
+  }
+  .gsFooter {
+    display: none;
+  }
+  .gsMain {
+    text-align: center;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: 'Didact Gothic', sans-serif;
+    font-size: 22px;
+  }
+}
+
+/***********/
+
+/** 10. style **/
+.mygrid.gstyle10 {
+  a {
+    color: #333333;
+    text-decoration: none;
+  }
+  .gsHead .gsAdded {
+    display: none;
+  }
+  .gsFooter {
+    display: none;
+  }
+  .gsMain {
+    text-align: center;
+  }
+  h1, h2, h3, h4 {
+    font-family: 'Play', sans-serif;
+    font-size: 24px;
+  }
+  .gsMain p {
+    display: none;
+  }
+}
+
+/***********/
+
+/** 11. style **/
+.mygrid.gstyle11 {
+  a {
+    color: #333333;
+    text-decoration: none;
+  }
+  .gsHead {
+    overflow: hidden;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+  }
+  .gsHead .gsAdded {
+    display: none;
+  }
+  .gsFooter {
+    display: none;
+  }
+  .gsMain {
+    text-align: center;
+  }
+  h1, h2, h3, h4 {
+    font-family: 'Play', sans-serif;
+    font-size: 18px;
+  }
+  .gsMain p {
+    display: none;
+  }
+  h1 a, h2 a, h3 a, h4 a {
+    color: $renk1
+  }
+}
+
+/***********/
+
+/** 12. style **/
+.mygrid.gstyle12 {
+  background-color: #ffffff;
+  border: 1px solid #D1D1D1;
+  a {
+    color: $renk1;
+  }
+  .gsMain {
+    text-align: center;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: 'Didact Gothic', sans-serif;
+    font-size: 22px;
+  }
+}
+
+@media(max-width: 400px) {
+  .mygrid .gsHead.galeriHead {
+    height: 110px;
+    overflow: hidden;
+  }
+  .mygrid .gsMain h1, .mygrid .gsMain h2, .mygrid .gsMain h3, .mygrid .gsMain h4 {
+    font-size: 14px !important;
+  }
+}
+
+@media(max-width: 767px) {
+  .mygrid .gsMain h1, .mygrid .gsMain h2, .mygrid .gsMain h3, .mygrid .gsMain h4 {
+    font-size: 14px !important;
+  }
+}
+
+@media(min-width: 768px) {
+}
+
+@media(min-width: 992px) {
+}
+
+@media(min-width: 1200px) {
+}

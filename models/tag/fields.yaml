@@ -1,0 +1,5 @@
+fields:
+    title:
+        label: 'mavitm.estate::lang.tags.title'
+        span: auto
+        type: text

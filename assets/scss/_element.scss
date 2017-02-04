@@ -1,0 +1,599 @@
+@import "_variable";
+
+.accordionUl {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: none;
+    padding-left: 15px;
+    background-color: $renk1K;
+  }
+  li a {
+    display: block;
+    padding: 10px;
+    color: #ffffff;
+    text-decoration: none;
+  }
+  > li {
+    background-color: $renk1;
+    border-bottom: 1px solid $renk1K;
+    border-top: 1px solid $renk1A;
+  }
+  li:hover {
+    background-color: $renk1A;
+  }
+  &.blue ul {
+    background-color: $renk2;
+  }
+  &.blue > li {
+    background-color: $renk2;
+    border-bottom: 1px solid $renk2K;
+    border-top: 1px solid $renk2A;
+  }
+  &.blue li:hover {
+    background-color: $renk2A;
+  }
+  &.white ul {
+    background-color: #D1D1D1;
+  }
+  &.white li a {
+    color: #333333;
+  }
+  &.white > li {
+    background-color: #EBEBEB;
+    border-bottom: 1px solid #D1D1D1;
+    border-top: 1px solid #f7f7f7;
+  }
+  &.white li:hover {
+    background-color: #f7f7f7;
+  }
+}
+
+/*####################### NAV ###############################*/
+.nav-pills {
+  > li.active > a, .nav-pills > li.active > a:focus, .nav-pills > li.active > a:hover {
+    background-color: $renk2;
+    color: #fff;
+  }
+}
+
+/*####################### BREADCRUMB & PAGINATION ###############################*/
+.breadcrumb {
+  padding: 30px 15px;
+  background-color: $renk1;
+  @include borderRadius(0);
+  li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 17px;
+    @include font1();
+    &:hover{
+      text-decoration: none;
+    }
+  }
+  > .active {
+    color: #FFFFFF;
+  }
+  &.blue {
+    background-color: $renk2;
+    color: #333333;
+    li a {
+      color: #ffffff;
+    }
+  }
+  &.red {
+    background-color: $renk1;
+    li a {
+      color: #ffffff;
+    }
+  }
+}
+
+.pagination {
+  > .active > a, .pagination > .active > a:focus, .pagination > .active > a:hover, .pagination > .active > span, .pagination > .active > span:focus, .pagination > .active > span:hover {
+    background-color: $renk2;
+    border-color: $renk2K;
+    color: #fff;
+    cursor: default;
+    z-index: 2;
+  }
+  &.red > .active > a, .pagination.red > .active > a:focus, .pagination.red > .active > a:hover, .pagination.red > .active > span, .pagination.red > .active > span:focus, .pagination.red > .active > span:hover {
+    background-color: $renk1;
+    border-color: $renk1K;
+    color: #fff;
+    cursor: default;
+    z-index: 2;
+  }
+}
+
+/*####################### PANEL ###############################*/
+.panel-title {
+  a {
+    text-decoration: none;
+    display: block;
+  }
+}
+
+.panel-color1 {
+  border-color: $renk2K;
+  &.panel-heading {
+    background: none;
+    background-color: $renk2;
+    border: 1px solid $renk2K;
+    color: #ffffff;
+  }
+}
+
+.panel-color2 {
+  border-color: $renk1K;
+  &.panel-heading {
+    background: none;
+    background-color: $renk1;
+    border: 1px solid $renk1K;
+    color: #ffffff;
+  }
+}
+
+.panel-white {
+  border-color: #D1D1D1;
+  &.panel-heading {
+    background: none;
+    background-color: #EBEBEB;
+    border: 1px solid #D1D1D1;
+    color: #333333;
+  }
+}
+
+/*####################### DROPDOWN & BUTTONS ###############################*/
+.dropdown-menu > .active > a, .dropdown-menu > .active > a:focus, .dropdown-menu > .active > a:hover {
+  background-color: $renk2;
+  color: #ffffff;
+}
+
+/*####################### TABS ###############################*/
+.mtmTabs {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 30px;
+  ul li {
+    font-family: 'Didact Gothic', sans-serif;
+    font-size: 18px;
+  }
+  ul li a {
+    -webkit-border-radius: 0;
+    border-radius: 0;
+  }
+}
+
+.tabStyle1 ul li a {
+  color: #333333;
+}
+
+.tabStyle1 .tab-content {
+  background-color: #ffffff;
+  padding: 30px;
+  border-color: transparent #ddd #ddd;
+  border-image: none;
+  border-style: solid;
+  border-width: 1px;
+}
+
+.tabStyle1 .tab-content .tab-pane {
+  padding: 0;
+  margin: 0;
+}
+
+/** TAB 2 **/
+.tabStyle2 {
+  ul li a {
+    color: #333333;
+  }
+  .nav-tabs {
+    background-color: #ffffff;
+    border-color: #ddd;
+    border-style: solid;
+    border-width: 1px;
+  }
+  .nav-tabs > li.active > a, .tabStyle2 .nav-tabs > li.active > a:focus, .tabStyle2 .nav-tabs > li.active > a:hover {
+    background-color: $renk2;
+    border-color: $renk2;
+    color: #ffffff;
+  }
+  .nav-tabs > li.active:after,
+  .nav-tabs > li.active:before {
+    top: 100%;
+    left: 50%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+  }
+  .nav-tabs > li.active:after {
+    border-color: rgba(38, 168, 228, 0);
+    border-top-color: $renk2;
+    border-width: 10px;
+    margin-left: -10px;
+  }
+  .nav-tabs > li.active:before {
+    border-color: rgba(38, 168, 228, 0);
+    border-top-color: $renk2;
+    border-width: 16px;
+    margin-left: -16px;
+  }
+  .tab-content {
+    background-color: #ffffff;
+    padding: 30px;
+    border-color: transparent #ddd #ddd;
+    border-image: none;
+    border-style: solid;
+    border-width: 1px;
+  }
+  .tab-content .tab-pane {
+    padding: 0;
+    margin: 0;
+  }
+}
+
+/** TAB 3 **/
+.tabStyle3 {
+  ul li a {
+    color: #333333;
+  }
+  .nav-tabs {
+    margin-bottom: 15px;
+    border-bottom: none;
+  }
+  > .nav-tabs > li {
+    margin-bottom: 0;
+    border-color: #ddd;
+    margin-right: 10px;
+  }
+  > .nav-tabs > li > a {
+    background-color: #e5e5e5;
+  }
+  > .nav-tabs > li:hover {
+    border: none;
+  }
+  > .nav-tabs > li:hover > a {
+  }
+  .nav-tabs > li.active > a,
+  .nav-tabs > li.active > a:focus,
+  .nav-tabs > li.active > a:hover {
+    background-color: #ffffff;
+    border: none;
+  }
+  .nav-tabs > li.active:after,
+  .nav-tabs > li.active:before {
+    top: 100%;
+    left: 50%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+  }
+  .nav-tabs > li.active:after {
+    border-color: rgba(255, 255, 255, 0);
+    border-top-color: #FFFFFF;
+    border-width: 10px;
+    margin-left: -10px;
+  }
+  .nav-tabs > li.active:before {
+    border-color: rgba(221, 221, 221, 0);
+    border-top-color: #DDDDDD;
+    border-width: 11px;
+    margin-left: -11px;
+  }
+  .tab-content {
+    background-color: #ffffff;
+    padding: 30px;
+    border-color: #ddd;
+    border-image: none;
+    border-style: solid;
+    border-width: 1px;
+  }
+  .tab-content .tab-pane {
+    padding: 0;
+    margin: 0;
+  }
+}
+
+/** TAB 4 **/
+.tabStyle4 {
+  background-color: #ffffff;
+  padding: 30px;
+  border: 1px solid #DDD;
+  .nav-tabs {
+    border-bottom: none;
+  }
+  .nav-tabs > li a {
+    color: #333333;
+  }
+  .nav-tabs > li:hover a {
+    border-bottom: none;
+  }
+  .nav-tabs > li.active > a,
+  .nav-tabs > li.active > a:focus,
+  .nav-tabs > li.active > a:hover {
+    background-color: $renk2;
+    border-color: $renk2;
+    color: #ffffff;
+  }
+}
+
+/** TAB 5 **/
+.tabStyle5 {
+  ul li a {
+    color: #333333;
+  }
+  .nav-tabs {
+    background-color: #ffffff;
+    border-color: #ddd;
+    border-style: solid;
+    border-width: 1px;
+  }
+  .nav-tabs > li.active > a,
+  .nav-tabs > li.active > a:focus,
+  .nav-tabs > li.active > a:hover {
+    background-color: $renk1;
+    border-color: $renk1;
+    color: #ffffff;
+  }
+  .nav-tabs > li.active:after,
+  .nav-tabs > li.active:before {
+    top: 100%;
+    left: 50%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+  }
+  .nav-tabs > li.active:after {
+    border-color: rgba(38, 168, 228, 0);
+    border-top-color: $renk1;
+    border-width: 10px;
+    margin-left: -10px;
+  }
+  .nav-tabs > li.active:before {
+    border-color: rgba(38, 168, 228, 0);
+    border-top-color: $renk1;
+    border-width: 16px;
+    margin-left: -16px;
+  }
+  .tab-content {
+    background-color: #ffffff;
+    padding: 30px;
+    border-color: transparent #ddd #ddd;
+    border-image: none;
+    border-style: solid;
+    border-width: 1px;
+  }
+  .tab-content .tab-pane {
+    padding: 0;
+    margin: 0;
+  }
+  .nav-tabs .dropdown-menu > .active > a,
+  .nav-tabs .dropdown-menu > .active > a:focus,
+  .nav-tabs .dropdown-menu > .active > a:hover {
+    background-color: $renk1;
+    color: #ffffff;
+  }
+}
+
+/** TAB 6 **/
+.tabStyle6 {
+  background-color: #ffffff;
+  padding: 30px;
+  border: 1px solid #DDD;
+  .nav-tabs {
+    border-bottom: none;
+  }
+  .nav-tabs > li a {
+    color: #333333;
+  }
+  .nav-tabs > li:hover a {
+    border-bottom: none;
+  }
+  .nav-tabs > li.active > a,
+  .nav-tabs > li.active > a:focus,
+  .nav-tabs > li.active > a:hover {
+    background-color: $renk1;
+    border-color: $renk1;
+    color: #ffffff;
+  }
+  .nav-tabs .dropdown-menu > .active > a,
+  .nav-tabs .dropdown-menu > .active > a:focus,
+  .nav-tabs .dropdown-menu > .active > a:hover {
+    background-color: $renk1;
+    color: #ffffff;
+  }
+}
+
+/*####################### CAROUSEL ###############################*/
+
+@media(max-width: 400px) {
+  .mtmTabs ul {
+    background-color: #ffffff;
+  }
+  .mtmTabs ul li {
+    float: none;
+    display: block;
+    width: 100%;
+  }
+  .mtmTabs ul li a {
+    margin-right: 0;
+  }
+  .tabStyle1 .nav-tabs > li.active > a {
+    border: none;
+  }
+  .tabStyle3 > .nav-tabs > li {
+    margin-right: 0;
+  }
+}
+
+/* ########################### TEXT BOX ################################## */
+.textBox {
+  background-color: #ffffff;
+  border: 1px solid #e9e9e9;
+  margin-bottom: 15px;
+  position: relative;
+  &.topRadius {
+    -webkit-border-radius: 15px 15px 0 0;
+    border-radius: 15px 15px 0 0;
+  }
+
+  .textBoxMain {
+    padding: 15px;
+    position: relative;
+  }
+  .textBoxMain .carouselButton {
+    width: 35px;
+    height: 45px;
+    position: absolute;
+    top: 35%;
+    background-color: #e9e9e9;
+    border: 1px solid #e9e9e9;
+    text-decoration: none;
+    display: block;
+    color: #333333;
+    font-size: 24px;
+    text-align: center;
+    padding-top: 5px;
+  }
+  .textBoxMain .owl-carousel {
+    margin-bottom: 0;
+  }
+  .textBoxMain .carouselButton:hover {
+    background-color: $renk2;
+    border: 1px solid #278fc9;
+    color: #ffffff;
+  }
+  .textBoxMain .leftBtn {
+    left: 0;
+    border-left: none;
+    -webkit-border-radius: 0 15px 15px 0;
+    border-radius: 0 15px 15px 0;
+  }
+  .textBoxMain .rightBtn {
+    right: 0;
+    border-right: none;
+    -webkit-border-radius: 15px 0 0 15px;
+    border-radius: 15px 0 0 15px;
+  }
+  .textBoxMain .row {
+    margin-top: 0;
+  }
+  .textBoxMain .propUl {
+    margin-left: 15px;
+    list-style: disc;
+  }
+  .textBoxMain .propUl li {
+    padding: 5px;
+    border-bottom: 1px solid #D1D1D1;
+  }
+
+  table, .list-group {
+    margin-bottom: 0;
+  }
+  table tr td:first-child {
+    border-left: none;
+  }
+  table tr td:last-child {
+    border-right: none;
+  }
+  .list-group {
+    -webkit-border-radius: 0;
+    border-radius: 0;
+  }
+  .list-group .list-group-item {
+    -webkit-border-radius: 0 !important;
+    border-radius: 0 !important;
+    border-left: none;
+    border-right: none;
+  }
+  .list-group .list-group-item:first-child {
+    border-top: none;
+  }
+  .list-group .list-group-item:last-child {
+    border-bottom: none;
+  }
+
+}
+
+
+/* ########################## FORM ################################### */
+.select {
+  position: relative;
+  select {
+    margin: 0;
+    outline: none;
+    display: inline-block;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    cursor: pointer;
+  }
+  select option {
+    display: block;
+    padding: 5px 10px;
+    border-bottom: 1px solid #D1D1D1;
+  }
+  &:after {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-family: FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    content: "\f078";
+    color: #aaa;
+    right: 6px;
+    top: 4px;
+    padding: 6px 6px;
+    border-left: 1px solid #ddd;
+    position: absolute;
+    pointer-events: none;
+  }
+  &:before {
+    content: '';
+    right: 6px;
+    top: 0px;
+    position: absolute;
+    pointer-events: none;
+    display: block;
+  }
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  select {
+    padding-right: 18px
+  }
+}
+
+/* ############################################################# */
+
+
+@media(max-width: 767px) {
+}
+
+@media(min-width: 768px) {
+}
+
+@media(min-width: 992px) {
+}
+
+@media(min-width: 1200px) {
+}

@@ -1,0 +1,8 @@
+.pointer{
+    cursor: pointer;
+}
+
+div[data-field-name="properties"] .btn:nth-child(2),
+div[data-field-name="properties"] .btn:nth-child(4) {
+    display: none;
+}

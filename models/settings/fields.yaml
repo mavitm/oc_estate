@@ -1,0 +1,84 @@
+fields:
+    section_currency:
+        tab: mavitm.estate::lang.settings.general
+        label: mavitm.estate::lang.settings.menuDescription
+        type: section
+tabs:
+    fields:
+        currency:
+            tab: mavitm.estate::lang.settings.general
+            label: mavitm.estate::lang.settings.currency
+            type: dropdown
+            default: eur
+
+        show_category_description:
+            tab: mavitm.estate::lang.settings.general
+            label: mavitm.estate::lang.settings.showDescription
+            type: checkbox
+            default: 0
+            span: auto
+
+        show_category_count:
+            tab: mavitm.estate::lang.settings.general
+            label: mavitm.estate::lang.settings.showCount
+            type: checkbox
+            default: 0
+            span: auto
+
+        detail_page:
+            tab: mavitm.estate::lang.settings.pages
+            label: mavitm.estate::lang.settings.detail_page
+            type: dropdown
+            default: 404
+
+        category_page:
+            tab: mavitm.estate::lang.settings.pages
+            label: mavitm.estate::lang.settings.category_page
+            type: dropdown
+            default: 404
+            options:
+                getDetailPageOptions
+
+        search_page:
+            tab: mavitm.estate::lang.settings.pages
+            label: mavitm.estate::lang.settings.search_page
+            type: dropdown
+            default: 404
+            options:
+                getDetailPageOptions
+
+        maxPerPage:
+              tab: mavitm.estate::lang.settings.pages
+              label: mavitm.estate::lang.settings.maxPerPage
+              type: number
+              default: 100
+
+        itemsPerPage:
+                tab: mavitm.estate::lang.settings.pages
+                label: mavitm.estate::lang.components.items_per_page
+                type: number
+                default: 10
+
+        import_bootsrap:
+            tab: mavitm.estate::lang.settings.ui
+            label: mavitm.estate::lang.settings.importBootsrap
+            type: checkbox
+            default: 0
+
+        import_owl:
+            tab: mavitm.estate::lang.settings.ui
+            label: mavitm.estate::lang.settings.importOwl
+            type: checkbox
+            default: 0
+
+        import_fa:
+            tab: mavitm.estate::lang.settings.ui
+            label: mavitm.estate::lang.settings.importFa
+            type: checkbox
+            default: 0
+
+        import_custom:
+            tab: mavitm.estate::lang.settings.ui
+            label: mavitm.estate::lang.settings.customcss
+            type: checkbox
+            default: 0

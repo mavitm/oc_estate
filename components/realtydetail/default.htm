@@ -1,0 +1,77 @@
+{% set item = __SELF__.item %}
+
+    <ol class="breadcrumb blue">
+        <li>
+            <a href="{{ 'home'|page }}">
+            <i class="fa fa-home"></i>  {{ 'Home'|_ }}
+            </a>
+        </li>
+        <li>
+            <a href="{{ categoryPage|page }}" rel="nofollow">{{ 'Real estate'|_ }}</a>
+        </li>
+        <li>
+            <a href="{{ item.category.url }}">{{ item.CategoryName }}</a>
+        </li>
+    </ol>
+
+    <div class="row">
+        <div class="col-md-8">
+
+            <div class="textBox">
+                <div class="textBoxMain">
+                    <div id="realtyCarousel" class="owl-carousel owl-theme realtyViewCarousel">
+                        {% for image in item.images %}
+                            <div class="item"><img src="{{ image.thumb(800, 800) }}" alt="{{ image.title|escape }}"></div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+
+            <div class="textBox">
+                <div class="textBoxMain">
+                    <div id="realtyCarousel2" class="owl-carousel owl-theme">
+                        {% for image in item.images %}
+                        <div class="item owlRealtyPager"><img src="{{ image.thumb(110, 110) }}" alt="{{ image.title|escape }}"></div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+
+            <div class="content">{{ item.description|raw }}</div>
+
+        </div>
+        <div class="col-md-4">
+
+            <div class="viewPara">
+                <span>{{ item.FormatPrice }}</span>
+                <i class="fa fa-{{ currency }}"></i>
+            </div>
+
+            <div class="viewCategory">
+                <span>{{ item.CategoryName }} / {{ item.TextStatus }}</span>
+            </div>
+
+            <div class="textBox">
+                <div class="textBoxMain viewExcerpt">
+                    <span>{{ item.excerpt }}</span>
+                </div>
+            </div>
+
+            {% if item.properties.count %}
+                <table class="table table-striped">
+                    {% for property in item.properties %}
+                        <tr>
+                            <td>
+                                <i class="{{ property.iconcss }}"></i>
+                                {{ property.name }}
+                            </td>
+                            <td>
+                                {{ property.value }}
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            {% endif %}
+
+        </div>
+    </div>

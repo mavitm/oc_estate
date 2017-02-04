@@ -1,0 +1,5 @@
+title: 'mavitm.estate::lang.categories.reorder'
+modelClass: Mavitm\Estate\Models\Category
+nameFrom: title
+toolbar:
+    buttons: reorder_toolbar

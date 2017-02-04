@@ -1,0 +1,34 @@
+columns:
+    realtyimages:
+        label: 'mavitm.estate::lang.realty.images'
+        type: partial
+        path: ~/plugins/mavitm/estate/models/realty/_realtyimages.htm
+        sortable: false
+    title:
+        label: 'mavitm.estate::lang.realty.title'
+        type: text
+        searchable: true
+        sortable: true
+    categoryName:
+        label: 'mavitm.estate::lang.realty.category'
+        type: text
+    text_status:
+        label: 'mavitm.estate::lang.realty.status'
+        type: text
+    formatprice:
+        label: 'mavitm.estate::lang.realty.price'
+        type: text
+    published:
+        label: 'mavitm.estate::lang.realty.published'
+        type: switch
+    created_at:
+        label: 'mavitm.estate::lang.realty.create_at'
+        type: datetime
+        invisible: true
+        sortable: true
+    updated_at:
+        label: 'mavitm.estate::lang.realty.update_at'
+        type: datetime
+        searchable: false
+        invisible: true
+        sortable: true

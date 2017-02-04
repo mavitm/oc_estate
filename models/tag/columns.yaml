@@ -1,0 +1,14 @@
+columns:
+    title:
+        label: 'mavitm.estate::lang.tags.title'
+        type: text
+        searchable: true
+        sortable: true
+    created_at:
+        label: 'mavitm.estate::lang.tags.create_at'
+        type: datetime
+        sortable: true
+    updated_at:
+        label: 'mavitm.estate::lang.tags.update_at'
+        type: datetime
+        sortable: true
