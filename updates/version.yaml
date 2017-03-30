@@ -5,7 +5,7 @@
     - builder_table_create_mavitm_estate_realty.php
 1.0.3:
     - 'Created table mavitm_estate_tags'
-    - builder_table_create_mavitm_estate_realty_tags.php
+    - builder_table_create_mavitm_estate_tags.php
 1.0.4:
     - 'Created table mavitm_estate_categories'
     - builder_table_create_mavitm_estate_categories.php
