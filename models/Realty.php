@@ -74,6 +74,9 @@ class Realty extends Model
     ############################################################################################################
 
     public function getCategoryNameAttribute(){
+        if (!$this->category) {
+            return;
+        }
         return $this->category->title;
     }
 
