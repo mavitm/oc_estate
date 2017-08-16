@@ -1,0 +1,16 @@
+columns:
+    title:
+        label: 'mavitm.estate::lang.categories.title'
+        type: text
+        searchable: true
+        sortable: true
+    count_realty:
+        label: 'mavitm.estate::lang.categories.countRealty'
+    created_at:
+        label: 'mavitm.estate::lang.categories.create_at'
+        type: datetime
+        sortable: true
+    updated_at:
+        label: 'mavitm.estate::lang.categories.update_at'
+        type: datetime
+        sortable: true

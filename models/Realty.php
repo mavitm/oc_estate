@@ -50,6 +50,11 @@ class Realty extends Model
             'table' => 'mavitm_estate_realty_tag',
             'order' => 'title'
         ],
+        'features' => [
+            'Mavitm\Estate\Models\Feature',
+            'table' => 'mavitm_estate_realty_feature',
+            'order' => 'title'
+        ],
     ];
 
     public $hasMany = [
