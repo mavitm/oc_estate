@@ -81,5 +81,8 @@ tabs:
             mode: relation
             tab: 'mavitm.estate::lang.tags.title'
 
-
-
+        features:
+            label: 'mavitm.estate::lang.plugin.features'
+            type: relation
+            nameFrom: title
+            tab: 'mavitm.estate::lang.plugin.features'

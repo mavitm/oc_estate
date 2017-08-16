@@ -1,0 +1,12 @@
+fields:
+    title:
+        label: 'mavitm.estate::lang.features.title'
+        span: auto
+        required: 1
+    slug:
+        label: 'mavitm.estate::lang.features.slug'
+        span: auto
+        required: 1
+        preset:
+            field: title
+            type: slug

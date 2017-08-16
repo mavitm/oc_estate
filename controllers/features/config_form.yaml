@@ -1,0 +1,11 @@
+name: Features
+modelClass: Mavitm\Estate\Models\Feature
+form: $/mavitm/estate/models/feature/fields.yaml
+defaultRedirect: mavitm/estate/features
+create:
+    redirect: 'mavitm/estate/features/update/:id'
+    redirectClose: mavitm/estate/features
+update:
+    redirect: mavitm/estate/features
+    redirectClose: mavitm/estate/features
+preview: {  }

@@ -59,6 +59,12 @@ class Plugin extends PluginBase
                         'icon'          => 'icon-folder',
                         'permissions'   =>['mavitm.estate.access.realty']
                     ],
+                    'feature' => [
+                        'label'         => 'mavitm.estate::lang.plugin.features',
+                        'url'           => Backend::url('mavitm/estate/features'),
+                        'icon'          => 'icon-check-square-o',
+                        'permissions'   =>['mavitm.estate.access.realty']
+                    ],
                     'tags' => [
                         'label'         => 'mavitm.estate::lang.tags.title',
                         'url'           => Backend::url('mavitm/estate/tags'),
