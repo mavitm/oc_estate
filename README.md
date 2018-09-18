@@ -1,13 +1,13 @@
 # estate
 October real estate plugin
 
-## Implementing front-end pages 
+## Implementing front-end pages
 
-The plugin provides several components for building the list page (archive), category page,  content details page and category list for the sidebar.  
+The plugin provides several components for building the list page (archive), category page,  content details page and category list for the sidebar.
 
 
 ## estate.htm
-  
+
 Search and categories listing
 
 
@@ -66,10 +66,10 @@ categoryPage = "estate"
 
 ## For the default settings
 
-Settings -> Real Estate -> Setting  
-Tab general -> money format, show category description, show category count number (for category menu)   
-Tab pages -> Optional Detail and list pages,  User definable maximum limit, page item limit   
-Tan interface -> Optional include css and javascript   
+Settings -> Real Estate -> Setting
+Tab general -> money format, show category description, show category count number (for category menu)
+Tab pages -> Optional Detail and list pages,  User definable maximum limit, page item limit
+Tab interface -> Option to include css and javascript   
 
 ----
 

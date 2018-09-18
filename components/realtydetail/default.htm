@@ -73,5 +73,13 @@
                 </table>
             {% endif %}
 
+            {% if item.features.count %}
+                <ul class="features">
+                    {% for property in item.features %}
+                        <li><i class="fa fa-check"></i> {{ property.title }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+
         </div>
     </div>

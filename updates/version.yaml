@@ -15,3 +15,9 @@
 1.0.6:
     - 'Created table mavitm_estate_realty_properties'
     - builder_table_create_mavitm_estate_realty_properties.php
+1.0.7:
+    - 'Created table mavitm_estate_features'
+    - builder_table_create_mavitm_estate_features.php
+1.0.8:
+    - 'Created table mavitm_estate_realty_feature'
+    - builder_table_create_mavitm_estate_realty_feature.php
