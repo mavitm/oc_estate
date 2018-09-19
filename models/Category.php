@@ -12,7 +12,7 @@ class Category extends Model
 
     public $timestamps = true;
 
-    public $table = 'mavitm_estate_categories';
+    public $table       = 'mavitm_estate_categories';
     public $implement   = ['@RainLab.Translate.Behaviors.TranslatableModel'];
 
     public $rules = [

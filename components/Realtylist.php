@@ -50,7 +50,7 @@ class Realtylist extends ComponentBase
                 'title'             => 'mavitm.estate::lang.components.categoryFilter',
                 'description'       => 'mavitm.estate::lang.components.filter_description',
                 'type'              => 'string',
-                'default'           => 0
+                'default'           => '{{ :slug }}'
             ],
             'itemsPerPage' => [
                 'title'             => 'mavitm.estate::lang.components.items_per_page',

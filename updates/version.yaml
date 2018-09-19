@@ -21,3 +21,5 @@
 1.0.8:
     - 'Created table mavitm_estate_realty_feature'
     - builder_table_create_mavitm_estate_realty_feature.php
+1.0.9:
+    - 'Edit page settings'

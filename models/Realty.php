@@ -7,6 +7,7 @@ use Carbon\Carbon;
 use Backend\Models\User;
 use ValidationException;
 use Mavitm\Estate\Models\Settings;
+use RainLab\Translate\Models\Message;
 /**
  * Model
  */
@@ -111,9 +112,9 @@ class Realty extends Model
 //            1 => e(trans('mavitm.estate::lang.realty.rent')),
 //            2 => e(trans('mavitm.estate::lang.realty.sold'))
 
-            0 => _("Buy"),
-            1 => _("Rent"),
-            2 => _("Sold")
+            0 => Message::get("Buy"),//_("Buy"),
+            1 => Message::get("Rent"),//_("Rent"),
+            2 => Message::get("Sold"),//_("Sold")
 
         ];
     }

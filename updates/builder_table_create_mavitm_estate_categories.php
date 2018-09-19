@@ -15,8 +15,7 @@ class BuilderTableCreateMavitmEstateCategories extends Migration
             $table->string('slug', 255);
             $table->text('description')->nullable();
             $table->integer('sort_order')->nullable();
-            $table->timestamp('created_at');
-            $table->timestamp('updated_at');
+            $table->timestamps();
         });
     }
     

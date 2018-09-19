@@ -12,8 +12,7 @@ class BuilderTableCreateMavitmEstateTags extends Migration
             $table->engine = 'InnoDB';
             $table->increments('id');
             $table->string('title', 255);
-            $table->timestamp('created_at');
-            $table->timestamp('updated_at');
+            $table->timestamps();
         });
     }
     

@@ -36,9 +36,24 @@ class Realtydetail extends ComponentBase
                 'type'        => 'string'
             ],
             'categoryPage' => [
-                'title'       => 'mavitm.estate::lang.components.items_category',
-                'type'        => 'dropdown',
-                'default'     => $settings->category_page,
+                'title'             => 'mavitm.estate::lang.components.items_category',
+                'type'              => 'dropdown',
+                'default'           => $settings->category_page,
+                'group'             => 'Links',
+            ],
+            'detailPage' => [
+                'title'             => 'mavitm.estate::lang.components.items_post',
+                'type'              => 'dropdown',
+                'default'           => $settings->detail_page,
+                'group'             => 'Links',
+                'options'           => $this->getCategoryPageOptions()
+            ],
+            'searchPage' => [
+                'title'             => 'mavitm.estate::lang.components.items_search',
+                'type'              => 'dropdown',
+                'default'           => $settings->search_page,
+                'group'             => 'Links',
+                'options'           => $this->getCategoryPageOptions()
             ],
         ];
     }
@@ -62,8 +77,10 @@ class Realtydetail extends ComponentBase
     {
         $slug = $this->property('slug');
         $item = Realty::isPublished()->where('slug', $slug)->first();
-
-        $item->category->setUrl($this->categoryPage, $this->controller);
+        if($item->category)
+        {
+            $item->category->setUrl($this->categoryPage, $this->controller);
+        }
 
         return $item;
     }

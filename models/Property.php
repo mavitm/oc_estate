@@ -19,7 +19,7 @@ class Property extends Model
 
     public $timestamps = false;
 
-    public $translatable = ['name', 'values'];
+    public $translatable = ['name', 'value'];
 
     public $belongsTo = [
         'realty' => ['Mavitm\Estate\Models\Realty']

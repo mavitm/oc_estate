@@ -21,8 +21,7 @@ class BuilderTableCreateMavitmEstateRealty extends Migration
             $table->double('price', 10, 2);
             $table->smallInteger('published');
             $table->integer('sort_order')->nullable();
-            $table->timestamp('created_at');
-            $table->timestamp('updated_at');
+            $table->timestamps();
         });
     }
     
