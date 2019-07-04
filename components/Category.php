@@ -15,7 +15,6 @@ use Mavitm\Estate\Models\Category as CategoryModel;
 
 class Category extends ComponentBase{
 
-
     /**
      * menu kybele items
      * @var

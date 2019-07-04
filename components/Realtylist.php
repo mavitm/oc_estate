@@ -3,6 +3,8 @@
 *@Author Mavitm
 *@url http://www.mavitm.com
 */
+
+use October\Rain\Exception\ApplicationException;
 use Str;
 use Lang;
 use Redirect;
@@ -131,9 +133,12 @@ class Realtylist extends ComponentBase
         $settings                   = Settings::instance();
 
         $this->pageParam            = $this->page['pageParam']    = $this->paramName('pageNumber');
-        $this->itemsPerPage         = $this->page['itemsPerPage'] = $this->paramName('itemsPerPage');
+        $this->itemsPerPage         = $this->page['itemsPerPage'] = $this->property('itemsPerPage');
 
-        $this->categoryID           = $this->page['categoryID']   = intval($this->paramName('categoryFilter'));
+        if($this->property("categoryFilter", null))
+        {
+            $this->prepareCategory();
+        }
 
         $this->page['colLg'] = $this->colLg;
         $this->page['colMd'] = $this->colMd;
@@ -161,10 +166,32 @@ class Realtylist extends ComponentBase
 
     }
 
+    protected function prepareCategory()
+    {
+        $category = $this->property("categoryFilter");
+        if(!is_numeric($category))
+        {
+            $categoryRow = Category::where("slug", "=", $category)->first();
+        }
+        else
+        {
+            $categoryRow = Category::where("id", "=", $category)->first();
+        }
+        if(!empty($categoryRow->id))
+        {
+            $this->page['category'] = $categoryRow;
+            $this->categoryID       = $this->page['categoryID'] = $categoryRow->id;
+        }
+        else
+        {
+            $this->categoryID       = $this->page['categoryID'] = null;
+        }
+    }
+
     public function loadList()
     {
         $param          =[
-            'page'          => $this->pageParam,
+            'page'          => $this->property("pageNumber",1),
             'perPage'       => $this->itemsPerPage,
             'sort'          => 'created_at',
             'order'         => 'desc',
@@ -174,7 +201,6 @@ class Realtylist extends ComponentBase
             'price'         => Input::get('price', null)
         ];
         $items          = Realty::ListFrontEnd($param);
-
 
         $items->each(function($item) {
             $item->setUrl($this->detailPage, $this->controller);

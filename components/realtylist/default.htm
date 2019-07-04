@@ -8,7 +8,7 @@
 
         <div class="gsHead ilanListHead">
             <a href="{{ item.url }}">
-                <img alt="" onerror="this.src='plugins/mavitm/estate/assets/images/no_img.jpg'" src="{{ item.srcimage }}">
+                <img alt="{{ item.title|escape }}" src="{{ item.srcimage }}">
             </a>
         </div>
 
@@ -38,23 +38,23 @@
 
 
 <div class="row">
-<div class="col-md-12">
-    {% if items.lastPage > 1 %}
-    <ul class="pagination">
-        {% if items.currentPage > 1 %}
-        <li><a href="{{ this.page.baseFileName|page({ (pageParam): (products.currentPage-1) }) }}">&larr; {{ 'Prev'|_ }}</a></li>
-        {% endif %}
+    <div class="col-md-12">
+        {% if items.lastPage > 1 %}
+        <ul class="pagination">
+            {% if items.currentPage > 1 %}
+            <li><a href="{{ this.page.baseFileName|page({ (pageParam): (products.currentPage-1) }) }}">&larr; {{ 'Prev'|_ }}</a></li>
+            {% endif %}
 
-        {% for page in 1..items.lastPage %}
-        <li class="{{ products.currentPage == page ? 'active' : null }}">
-            <a href="{{ this.page.baseFileName|page({ (pageParam): page }) }}">{{ page }}</a>
-        </li>
-        {% endfor %}
+            {% for page in 1..items.lastPage %}
+            <li class="{{ products.currentPage == page ? 'active' : null }}">
+                <a href="{{ this.page.baseFileName|page({ (pageParam): page }) }}">{{ page }}</a>
+            </li>
+            {% endfor %}
 
-        {% if items.lastPage > items.currentPage %}
-        <li><a href="{{ this.page.baseFileName|page({ (pageParam): (products.currentPage+1) }) }}">{{ 'Next'|_ }} &rarr;</a></li>
+            {% if items.lastPage > items.currentPage %}
+            <li><a href="{{ this.page.baseFileName|page({ (pageParam): (products.currentPage+1) }) }}">{{ 'Next'|_ }} &rarr;</a></li>
+            {% endif %}
+        </ul>
         {% endif %}
-    </ul>
-    {% endif %}
-</div>
+    </div>
 </div>

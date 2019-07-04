@@ -77,7 +77,8 @@ class Realtydetail extends ComponentBase
     {
         $slug = $this->property('slug');
         $item = Realty::isPublished()->where('slug', $slug)->first();
-        if($item->category)
+
+        if(!empty($item->category))
         {
             $item->category->setUrl($this->categoryPage, $this->controller);
         }
