@@ -23,3 +23,5 @@
     - builder_table_create_mavitm_estate_realty_feature.php
 1.0.9:
     - 'Edit page settings'
+1.0.10:
+    - 'Edit category view'
