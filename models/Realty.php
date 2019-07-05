@@ -184,10 +184,16 @@ class Realty extends Model
                 $tags = [$tags];
             }
 
-            $tags = array_map("strtolower", $tags);
+            $func = function($value) {
+                return "%".strtolower($value)."%";
+            };
+
+            $tags = array_map($func, $tags);
 
             $query->whereHas('tags', function($q) use ($tags) {
-                $q->whereIn('id', $tags);
+                for ($i = 0; $i < count($tags); $i++) {
+                    $q->where('title', 'like', $tags[$i]);
+                }
             });
         }
 
