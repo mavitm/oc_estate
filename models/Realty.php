@@ -180,9 +180,8 @@ class Realty extends Model
         $query->isPublished();
 
         if(!empty($tags)){
-            if(!is_array($tags)){
-                $tags = [$tags];
-            }
+            
+            $tags = array_map('trim', explode(",", $tags));
 
             $func = function($value) {
                 return "%".strtolower($value)."%";
@@ -190,11 +189,21 @@ class Realty extends Model
 
             $tags = array_map($func, $tags);
 
-            $query->whereHas('tags', function($q) use ($tags) {
-                for ($i = 0; $i < count($tags); $i++) {
-                    $q->where('title', 'like', $tags[$i]);
-                }
-            });
+            $tagsCount = count($tags);
+
+            if ($tagsCount) {
+
+                $query->whereHas('tags', function($q) use ($tags, $tagsCount) {
+
+                    $q->where('title', 'like', $tags[0]);
+
+                    if ($tagsCount > 1) {
+                        for ($i = 1; $i < $tagsCount; $i++) {
+                            $q->orWhere('title', 'like', $tags[$i]);
+                        }
+                    }
+                });
+            }
         }
 
         if(!empty($category)){
