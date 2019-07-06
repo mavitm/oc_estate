@@ -74,7 +74,6 @@ class Realty extends Model
         return ($this->user_id == $user->id) || $user->hasAnyAccess(['mavitm.estate.access.realty']);
     }
 
-
     ############################################################################################################
     # GET ATTRIBUTE
     ############################################################################################################
@@ -169,7 +168,6 @@ class Realty extends Model
             'price'         => null
         ], $options));
 
-
         if($perPage > 100){
             $perPage = (
                 intval(Settings::instance()->maxPerPage) ?
@@ -180,30 +178,19 @@ class Realty extends Model
         $query->isPublished();
 
         if(!empty($tags)){
-            
-            $tags = array_map('trim', explode(",", $tags));
-
-            $func = function($value) {
-                return "%".strtolower($value)."%";
-            };
-
-            $tags = array_map($func, $tags);
-
-            $tagsCount = count($tags);
-
-            if ($tagsCount) {
-
-                $query->whereHas('tags', function($q) use ($tags, $tagsCount) {
-
-                    $q->where('title', 'like', $tags[0]);
-
-                    if ($tagsCount > 1) {
-                        for ($i = 1; $i < $tagsCount; $i++) {
-                            $q->orWhere('title', 'like', $tags[$i]);
-                        }
-                    }
-                });
+            if(!is_array($tags)){
+                if(strpos($tags, ",") !== false)
+                {
+                    $tags   = array_map("trim", explode(',', $tags));
+                }
+                else
+                {
+                    $tags = [$tags];
+                }
             }
+            $query->whereHas('tags', function($q) use ($tags) {
+                $q->search($tags);
+            });
         }
 
         if(!empty($category)){
@@ -216,9 +203,15 @@ class Realty extends Model
 
         if(!empty($price)){
             if(is_array($price) && count($price) == 2){
-                $query->whereBetween('price', [min($price), max($price)]);
+                if(!empty($price[0]) && !empty($price[1]))
+                {
+                    $query->whereBetween('price', [min($price), max($price)]);
+                }
             }else{
-                $query->where("price", ">=", floatval($price));
+                if(floatval($price) > 0.01)
+                {
+                    $query->where("price", ">=", floatval($price));
+                }
             }
         }
 
@@ -229,6 +222,14 @@ class Realty extends Model
         if($order != 'desc'){
             $order = 'asc';
         }
+
+        $sql = $query->toSql();
+        foreach($query->getBindings() as $binding)
+        {
+            $value = is_numeric($binding) ? $binding : "'".$binding."'";
+            $sql = preg_replace('/\?/', $value, $sql, 1);
+        }
+        //throw new \October\Rain\Exception\ApplicationException($sql);
 
         return $query->paginate($perPage, $page);
     }
