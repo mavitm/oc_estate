@@ -74,7 +74,6 @@ class Realty extends Model
         return ($this->user_id == $user->id) || $user->hasAnyAccess(['mavitm.estate.access.realty']);
     }
 
-
     ############################################################################################################
     # GET ATTRIBUTE
     ############################################################################################################
@@ -169,7 +168,6 @@ class Realty extends Model
             'price'         => null
         ], $options));
 
-
         if($perPage > 100){
             $perPage = (
                 intval(Settings::instance()->maxPerPage) ?
@@ -181,13 +179,18 @@ class Realty extends Model
 
         if(!empty($tags)){
             if(!is_array($tags)){
-                $tags = [$tags];
+                if(strpos($tags, ",") !== false)
+                {
+                    $tags   = explode(',', $tags);
+                    $tags   = array_map("trim", $tags);
+                }
+                else
+                {
+                    $tags = [$tags];
+                }
             }
-
-            $tags = array_map("strtolower", $tags);
-
             $query->whereHas('tags', function($q) use ($tags) {
-                $q->whereIn('id', $tags);
+                $q->search($tags);
             });
         }
 
@@ -201,9 +204,15 @@ class Realty extends Model
 
         if(!empty($price)){
             if(is_array($price) && count($price) == 2){
-                $query->whereBetween('price', [min($price), max($price)]);
+                if(!empty($price[0]) && !empty($price[1]))
+                {
+                    $query->whereBetween('price', [min($price), max($price)]);
+                }
             }else{
-                $query->where("price", ">=", floatval($price));
+                if(floatval($price) > 0.01)
+                {
+                    $query->where("price", ">=", floatval($price));
+                }
             }
         }
 
@@ -214,6 +223,14 @@ class Realty extends Model
         if($order != 'desc'){
             $order = 'asc';
         }
+
+        $sql = $query->toSql();
+        foreach($query->getBindings() as $binding)
+        {
+            $value = is_numeric($binding) ? $binding : "'".$binding."'";
+            $sql = preg_replace('/\?/', $value, $sql, 1);
+        }
+        //throw new \October\Rain\Exception\ApplicationException($sql);
 
         return $query->paginate($perPage, $page);
     }
