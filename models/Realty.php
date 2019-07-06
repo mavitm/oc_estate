@@ -181,8 +181,7 @@ class Realty extends Model
             if(!is_array($tags)){
                 if(strpos($tags, ",") !== false)
                 {
-                    $tags   = explode(',', $tags);
-                    $tags   = array_map("trim", $tags);
+                    $tags   = array_map("trim", explode(',', $tags));
                 }
                 else
                 {
