@@ -223,12 +223,12 @@ class Realty extends Model
             $order = 'asc';
         }
 
-        $sql = $query->toSql();
-        foreach($query->getBindings() as $binding)
-        {
-            $value = is_numeric($binding) ? $binding : "'".$binding."'";
-            $sql = preg_replace('/\?/', $value, $sql, 1);
-        }
+        //$sql = $query->toSql();
+        //foreach($query->getBindings() as $binding)
+        //{
+        //    $value = is_numeric($binding) ? $binding : "'".$binding."'";
+        //    $sql = preg_replace('/\?/', $value, $sql, 1);
+        //}
         //throw new \October\Rain\Exception\ApplicationException($sql);
 
         return $query->paginate($perPage, $page);
