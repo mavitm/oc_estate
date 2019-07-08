@@ -203,15 +203,9 @@ class Realty extends Model
 
         if(!empty($price)){
             if(is_array($price) && count($price) == 2){
-                if(!empty($price[0]) && !empty($price[1]))
-                {
-                    $query->whereBetween('price', [min($price), max($price)]);
-                }
+                $query->whereBetween('price', [min($price), max($price)]);
             }else{
-                if(floatval($price) > 0.01)
-                {
-                    $query->where("price", ">=", floatval($price));
-                }
+                $query->where("price", ">=", floatval($price));
             }
         }
 
