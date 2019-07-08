@@ -26,4 +26,6 @@
 1.0.10:
     - 'Edit category view'
 1.1.0:
-    - 'edit search component'    
+    - 'edit search component'
+1.1.1:
+    - 'Keywords validate error fixed'

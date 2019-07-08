@@ -20,13 +20,12 @@ class Tag extends Model
      * Validation
      */
     public $rules = [
-        'title' => 'required|unique:mavitm_estate_tags|regex:/^[a-z0-9-_]+$/'
+        'title' => 'required|unique:mavitm_estate_tags'
     ];
 
     public $customMessages = [
         'title.required'    => 'A tag title is required.',
         'title.unique'      => 'A tag by that title already exists.',
-        'title.regex'       => 'Tags may only contain alpha-numeric characters and hyphens.'
     ];
 
     public $belongsToMany = [
