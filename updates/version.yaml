@@ -29,3 +29,6 @@
     - 'edit search component'
 1.1.1:
     - 'Keywords validate error fixed'
+1.1.2:
+    - 'Added addresses to real estate'
+    - builder_table_add_address_to_realty.php

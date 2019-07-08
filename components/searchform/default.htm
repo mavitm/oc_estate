@@ -13,7 +13,6 @@
                 {% endif %}
             </select>
         </div>
-
         <div class="col-md-3 col-xs-6">
             <select name="status" class="form-control">
                 <option value="">{{ 'Status Select'|_ }}</option>
@@ -29,6 +28,10 @@
 
         <div class="col-md-6">
             <input type="text" name="tags" placeholder="{{ 'Search by state, suburb or postcode'|_ }}" class="form-control" />
+        </div>
+
+        <div class="col-md-6">
+            <input type="text" name="address" placeholder="{{ 'Search by address'|_ }}" class="form-control" />
         </div>
 
         <div class="clearfix form-group"></div>

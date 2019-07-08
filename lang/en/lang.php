@@ -49,6 +49,7 @@
         'buy'          => 'Buy',
         'rent'         => 'Rent',
         'sold'         => 'Sold',
+        'address'      => 'Address'
     ],
     'property'   => [
         'title'     => 'Property name',

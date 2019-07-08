@@ -21,10 +21,11 @@ class Realty extends Model
     public $rules = [
         'title'     => 'required',
         'slug'      => ['required', 'regex:/^[a-z0-9\/\:_\-\*\[\]\+\?\|]*$/i', 'unique:mavitm_estate_realty'],
-        'price'     => 'required'
+        'price'     => 'required',
+        'address'   => 'required|string'
     ];
 
-    public $translatable = ['title', 'excerpt', 'description'];
+    public $translatable = ['title', 'excerpt', 'description', 'address'];
 
     public static $allowedSortingOptions = array(
         'title'         => 'Title',
@@ -32,7 +33,8 @@ class Realty extends Model
         'created_at'    => 'Created',
         'updated_at'    => 'Updated',
         'sort_order'    => 'Order',
-        'random'        => 'Random'
+        'random'        => 'Random',
+        'address'       => 'Address'
     );
 
     ############################################################################################################
@@ -165,7 +167,8 @@ class Realty extends Model
             'category'      => null,
             'status'        => null,
             'tags'          => null,
-            'price'         => null
+            'price'         => null,
+            'address'       => null
         ], $options));
 
         if($perPage > 100){
@@ -191,6 +194,10 @@ class Realty extends Model
             $query->whereHas('tags', function($q) use ($tags) {
                 $q->search($tags);
             });
+        }
+
+        if (!empty($address)) {
+            $query->where('address', 'like', '%'.$address.'%');
         }
 
         if(!empty($category)){

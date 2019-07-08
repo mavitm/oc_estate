@@ -18,6 +18,11 @@ columns:
     formatprice:
         label: 'mavitm.estate::lang.realty.price'
         type: text
+    address:
+        label: 'mavtim.estate::lang.realty.address'
+        type: text
+        searchable: true
+        sortable: true
     published:
         label: 'mavitm.estate::lang.realty.published'
         type: switch
