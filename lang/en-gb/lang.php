@@ -2,7 +2,9 @@
     'plugin' => [
         'name'          => 'Real estate',
         'description'   => '',
-        'category'      => 'Category'
+        'category'      => 'Category',
+        'features'      => 'Features',
+        'messages'      => 'Messages'
     ],
     'categories'        => [
         'title'         => 'Category name',
@@ -39,7 +41,21 @@
         'status'        => 'Status',
         'buy'           => 'Buy',
         'rent'          => 'Rent',
-        'sold'          => 'Sold'
+        'sold'          => 'Sold',
+        'address'       => 'Address'
+    ],
+    'contactForm' => [
+        'message'       => 'I\'m interested in this property [ :realty ] and I\'d like to know more details.',
+        'success'       => 'Your message has been received!'
+    ],
+    'message' => [
+        'name'         => 'Name',
+        'email'        => 'Email',
+        'phone'        => 'Phone',
+        'realty_id'    => 'Realty',
+        'message'      => 'Message',
+        'created_at'   => 'Submitted',
+        'realty'       => 'Realty'
     ],
     'property'  => [
         'title'         => 'Property name',
@@ -62,7 +78,7 @@
         'ui'                => 'Interface',
         'importBootsrap'    => 'Included bootstrap(3.3.7) css and js',
         'importOwl'         => 'Included Owl carousel(1.3.2) css and js',
-        'importFa'          => 'Included Font Awesome(4.6.3) css',
+        'importFa'          => 'Included Font Awesome(4.7.0) css',
         'customcss'         => 'Include custom css',
     ],
     'components' => [
@@ -84,7 +100,9 @@
         'detailDesc'                => 'Show detail real estate',
         'catehoryName'              => 'Category menu',
         'categoryDesc'              => 'Category list menu',
-        'column'                    => 'info search google Bootstrap 3 grid system 1-12'
+        'column'                    => 'info search google Bootstrap 3 grid system 1-12',
+        'contactForm'               => 'Contact Form',
+        'contactFormDesc'           => 'Real estate contact form'
 
     ]
 ];

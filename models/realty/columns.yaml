@@ -19,7 +19,7 @@ columns:
         label: 'mavitm.estate::lang.realty.price'
         type: text
     address:
-        label: 'mavtim.estate::lang.realty.address'
+        label: 'mavitm.estate::lang.realty.address'
         type: text
         searchable: true
         sortable: true

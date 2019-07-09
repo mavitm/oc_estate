@@ -1,0 +1,32 @@
+{{ form_open({ request: __SELF__~'::onHandleForm', class: 'form-horizontal' }) }}
+
+    <div class="row">
+
+        <div class="col-md-4">
+            <input type="text" name="name" placeholder="{{ 'Name Surname'|_ }}" class="form-control" />
+        </div>
+
+        <div class="col-md-4">
+            <input type="text" name="email" placeholder="{{ 'Email'|_ }}" class="form-control" />
+        </div>
+
+        <div class="col-md-4">
+            <input type="text" name="phone" placeholder="{{ 'Phone'|_ }}" class="form-control" />
+        </div>
+
+        <div class="clearfix form-group visible-xs visible-sm"></div>
+
+        <div class="col-12">
+            <textarea class="form-control" name="message" rows="3">{{ __SELF__.contactMessage }}</textarea>
+        </div>
+
+        <div class="clearfix form-group visible-xs visible-sm"></div>
+
+        <div class="col-12 btn-block">
+            <button type="submit" class="btn btn-success btn-block">
+                <b>{{ 'Submit'|_ }}</b>
+            </button>
+        </div>
+
+    </div>
+{{ form_close() }}

@@ -65,6 +65,10 @@ class Realty extends Model
             'Mavitm\Estate\Models\Property',
             'order' => 'sort_order',
         ],
+        'messages' => [
+            'Mavitm\Estate\Models\Message',
+            'order' => 'created_at desc'
+        ]
     ];
 
     ############################################################################################################
@@ -233,6 +237,11 @@ class Realty extends Model
         //throw new \October\Rain\Exception\ApplicationException($sql);
 
         return $query->paginate($perPage, $page);
+    }
+
+    public function afterDelete()
+    {
+        $this->messages()->delete();
     }
 
 }

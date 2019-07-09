@@ -1,0 +1,39 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    id:
+        label: ID
+        disabled: true
+        context:
+            - preview
+    realty:
+        label: 'mavitm.estate::lang.message.realty'
+        type: relation
+        select: concat(title, ' (', address, ')')
+    name:
+        label: 'mavitm.estate::lang.message.name'
+        type: text
+        context:
+            - preview
+    email:
+        label: 'mavitm.estate::lang.message.email'
+        type: text
+        context:
+            - preview
+    phone:
+        label: 'mavitm.estate::lang.message.phone'
+        type: text
+        context:
+            - preview
+    message:
+        label: 'mavitm.estate::lang.message.message'
+        type: textarea
+        context:
+            - preview
+    created_at:
+        label: 'mavitm.estate::lang.message.created_at'
+        type: text
+        context:
+            - preview

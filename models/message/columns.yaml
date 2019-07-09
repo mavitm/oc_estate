@@ -1,0 +1,39 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    realty_id:
+        label: 'mavitm.estate::lang.message.realty'
+        type: partial
+        path: ~/plugins/mavitm/estate/models/message/_realty.htm
+        sortable: true
+        searchable: true
+        clickable: false
+    name:
+        label: 'mavitm.estate::lang.message.name'
+        type: text
+        searchable: true
+        sortable: true
+    email:
+        label: 'mavitm.estate::lang.message.email'
+        type: text
+        searchable: true
+        sortable: true
+    phone:
+        label: 'mavitm.estate::lang.message.phone'
+        type: text
+        searchable: true
+        sortable: true
+    message:
+        label: 'mavitm.estate::lang.message.message'
+        type: text
+        searchable: true
+        sortable: true
+    created_at:
+        label: 'mavitm.estate::lang.message.created_at'
+        type: datetime
+        format: Y-m-d G:i:s
+        searchable: true
+        sortable: true
+
