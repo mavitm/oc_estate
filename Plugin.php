@@ -25,6 +25,7 @@ class Plugin extends PluginBase
             'Mavitm\Estate\Components\Realtylist'    => 'realty_list',
             'Mavitm\Estate\Components\Realtydetail'  => 'realty_detail',
             'Mavitm\Estate\Components\Category'      => 'realty_category',
+            'Mavitm\Estate\Components\ContactForm'       => 'contact_form'
         ];
     }
 
@@ -76,6 +77,12 @@ class Plugin extends PluginBase
                         'label'         => 'mavitm.estate::lang.settings.menuLabel',
                         'url'           => Backend::url('system/settings/update/mavitm/estate/settings'),
                         'icon'          => 'icon-cog',
+                        'permissions'   => ['mavitm.estate.access.realty']
+                    ],
+                    'messages' => [
+                        'label'         => 'mavitm.estate::lang.plugin.messages',
+                        'url'           => Backend::url('mavitm/estate/messages'),
+                        'icon'          => 'icon-envelope',
                         'permissions'   => ['mavitm.estate.access.realty']
                     ]
                 ]

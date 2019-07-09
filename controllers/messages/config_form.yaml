@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Message
+
+# Model Form Field configuration
+form: $/mavitm/estate/models/message/fields.yaml
+
+# Model Class name
+modelClass: Mavitm\Estate\Models\Message
+
+# Default redirect location
+defaultRedirect: mavitm/estate/messages
+
+# Create page
+create:
+    title: Create Message
+    redirect: mavitm/estate/messages/update/:id
+    redirectClose: mavitm/estate/messages
+
+# Update page
+update:
+    title: Edit Message
+    redirect: mavitm/estate/messages
+    redirectClose: mavitm/estate/messages
+
+# Preview page
+preview:
+    title: Preview Message

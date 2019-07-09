@@ -198,7 +198,8 @@ class Realtylist extends ComponentBase
             'category'      => Input::get('category', $this->categoryID),
             'status'        => Input::get('status', null),
             'tags'          => Input::get('tags', null),
-            'price'         => Input::get('price', null)
+            'price'         => Input::get('price', null),
+            'address'       => Input::get('address', null)
         ];
         $items          = Realty::ListFrontEnd($param);
 

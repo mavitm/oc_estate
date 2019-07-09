@@ -21,10 +21,11 @@ class Realty extends Model
     public $rules = [
         'title'     => 'required',
         'slug'      => ['required', 'regex:/^[a-z0-9\/\:_\-\*\[\]\+\?\|]*$/i', 'unique:mavitm_estate_realty'],
-        'price'     => 'required'
+        'price'     => 'required',
+        'address'   => 'required|string'
     ];
 
-    public $translatable = ['title', 'excerpt', 'description'];
+    public $translatable = ['title', 'excerpt', 'description', 'address'];
 
     public static $allowedSortingOptions = array(
         'title'         => 'Title',
@@ -32,7 +33,8 @@ class Realty extends Model
         'created_at'    => 'Created',
         'updated_at'    => 'Updated',
         'sort_order'    => 'Order',
-        'random'        => 'Random'
+        'random'        => 'Random',
+        'address'       => 'Address'
     );
 
     ############################################################################################################
@@ -63,6 +65,10 @@ class Realty extends Model
             'Mavitm\Estate\Models\Property',
             'order' => 'sort_order',
         ],
+        'messages' => [
+            'Mavitm\Estate\Models\Message',
+            'order' => 'created_at desc'
+        ]
     ];
 
     ############################################################################################################
@@ -165,7 +171,8 @@ class Realty extends Model
             'category'      => null,
             'status'        => null,
             'tags'          => null,
-            'price'         => null
+            'price'         => null,
+            'address'       => null
         ], $options));
 
         if($perPage > 100){
@@ -193,6 +200,10 @@ class Realty extends Model
             });
         }
 
+        if (!empty($address)) {
+            $query->where('address', 'like', '%'.$address.'%');
+        }
+
         if(!empty($category)){
             $query->where("category_id", "=", $category);
         }
@@ -203,15 +214,9 @@ class Realty extends Model
 
         if(!empty($price)){
             if(is_array($price) && count($price) == 2){
-                if(!empty($price[0]) && !empty($price[1]))
-                {
-                    $query->whereBetween('price', [min($price), max($price)]);
-                }
+                $query->whereBetween('price', [min($price), max($price)]);
             }else{
-                if(floatval($price) > 0.01)
-                {
-                    $query->where("price", ">=", floatval($price));
-                }
+                $query->where("price", ">=", floatval($price));
             }
         }
 
@@ -232,6 +237,11 @@ class Realty extends Model
         //throw new \October\Rain\Exception\ApplicationException($sql);
 
         return $query->paginate($perPage, $page);
+    }
+
+    public function afterDelete()
+    {
+        $this->messages()->delete();
     }
 
 }

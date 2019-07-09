@@ -34,6 +34,12 @@ fields:
         span: auto
         required: 1
         type: dropdown
+    
+    address:
+        label: 'mavitm.estate::lang.realty.address'
+        span: auto
+        required: 1
+        type: text
 
     published:
         label: 'mavitm.estate::lang.realty.published'
