@@ -8,7 +8,7 @@ class BuilderTableCreateMavitmEstateCategories extends Migration
     public function up()
     {
         Schema::table('mavitm_estate_realty', function($table) {
-            $table->string('address', 255)->after('description');
+            $table->string('address', 255)->after('description')->nullable();
         });
     }
     

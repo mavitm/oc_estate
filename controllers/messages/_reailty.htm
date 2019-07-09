@@ -1,0 +1,22 @@
+<h3 class="page-header"><?= e(trans('mavitm.estate::lang.message.realty_id'))?></h3>
+<div class="row">
+    <div class="col-md-2">
+        <a href="<?= \Backend\Facades\Backend::url('mavitm/estate/realties/preview/' . $formModel->realty->id) ?>" target="_blank">
+            <img src="<?=$formModel->realty->images[0]->path;?>" alt="image" style="width: 100%; margin-bottom: 15px;">
+        </a>
+    </div>
+    <div class="col-md-10">
+        <p>
+            <strong><?=$formModel->realty->title;?></strong> / <?=$formModel->realty->FormatPrice;?>
+            <i class="icon-<?=$relatySettings->currency;?>"></i>
+        </p>
+        <p><i class="icon-folder"></i> <?=$formModel->realty->CategoryName;?></p>
+        <p><i class="icon-bullseye"></i> <?=$formModel->realty->TextStatus;?></p>
+        <p><i class="icon-map"></i> <?=$formModel->realty->address;?></p>
+        <hr>
+        <p><em><?=$formModel->realty->excerpt;?></em></p>
+    </div>
+</div>
+
+<h3 class="page-header"><?= e(trans('mavitm.estate::lang.message.message'))?></h3>
+<a href="tel:<?=$formModel->phone;?>" class="btn btn-primary pull-right"><i class="icon-phone"></i> <?= e(trans('mavitm.estate::lang.message.call'))?></a>

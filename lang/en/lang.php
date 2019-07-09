@@ -63,7 +63,8 @@
         'realty_id'    => 'Realty',
         'message'      => 'Message',
         'created_at'   => 'Submitted',
-        'realty'       => 'Realty'
+        'realty'       => 'Realty',
+        'call'         => 'Call'
     ],
     'property'   => [
         'title'     => 'Property name',
@@ -111,6 +112,5 @@
         'column'                    => 'info search google Bootstrap 3 grid system 1-12',
         'contactForm'               => 'Contact Form',
         'contactFormDesc'           => 'Real estate contact form'
-
     ],
 ];

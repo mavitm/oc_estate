@@ -55,7 +55,8 @@
         'realty_id'    => 'Realty',
         'message'      => 'Message',
         'created_at'   => 'Submitted',
-        'realty'       => 'Realty'
+        'realty'       => 'Realty',
+        'call'         => 'Call'
     ],
     'property'  => [
         'title'         => 'Property name',

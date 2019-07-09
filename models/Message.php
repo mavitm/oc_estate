@@ -45,6 +45,6 @@ class Message extends Model
     }
 
     public $belongsTo = [
-        'realty' => [ 'Mavitm\Estate\Models\Realty' ]
+        'realty' => [ 'Mavitm\Estate\Models\Realty', 'key' => 'realty_id', 'otherKey' => 'id' ]
     ];
 }
