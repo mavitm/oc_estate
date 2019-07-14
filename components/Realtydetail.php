@@ -66,7 +66,7 @@ class Realtydetail extends ComponentBase
     public function onRun()
     {
         $settings           = Settings::instance();
-        $this->currency     = $this->page['currency']     = $settings->currency;
+        $this->currency     = $this->page['currency']       = $settings->currency;
         $this->categoryPage = $this->page['categoryPage']   = $this->property('categoryPage');
         $this->item         = $this->page['item']           = $this->loadItem();
 

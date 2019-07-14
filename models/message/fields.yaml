@@ -1,17 +1,16 @@
-# ===================================
-#  Form Field Definitions
-# ===================================
-
 fields:
+    partial1:
+        span: full
+        path: reailty
+        type: partial
+        context:
+            - preview
     id:
         label: ID
         disabled: true
         context:
             - preview
-    realty:
-        label: 'mavitm.estate::lang.message.realty'
-        type: relation
-        select: concat(title, ' (', address, ')')
+        type: text
     name:
         label: 'mavitm.estate::lang.message.name'
         type: text

@@ -1,6 +1,6 @@
 <?php Block::put('breadcrumb') ?>
     <ul>
-        <li><a href="<?= Backend::url('mavitm/estate/messages') ?>"><?= e(trans('mavitm.estate::lang.plugin.messages'))?></a></li>
+        <li><a href="<?= Backend::url('mavitm/estate/properties') ?>">Properties</a></li>
         <li><?= e($this->pageTitle) ?></li>
     </ul>
 <?php Block::endPut() ?>
@@ -18,30 +18,22 @@
                 <button
                     type="submit"
                     data-request="onSave"
-                    data-request-data="redirect:0"
                     data-hotkey="ctrl+s, cmd+s"
-                    data-load-indicator="Saving Message..."
+                    data-load-indicator="Creating Property..."
                     class="btn btn-primary">
-                    <?= e(trans('backend::lang.form.save')) ?>
+                    Create
                 </button>
                 <button
                     type="button"
                     data-request="onSave"
                     data-request-data="close:1"
                     data-hotkey="ctrl+enter, cmd+enter"
-                    data-load-indicator="Saving Message..."
+                    data-load-indicator="Creating Property..."
                     class="btn btn-default">
-                    <?= e(trans('backend::lang.form.save_and_close')) ?>
-                </button>
-                <button
-                    type="button"
-                    class="oc-icon-trash-o btn-icon danger pull-right"
-                    data-request="onDelete"
-                    data-load-indicator="Deleting Message..."
-                    data-request-confirm="Delete this message?">
+                    Create and Close
                 </button>
                 <span class="btn-text">
-                    <a href="<?= Backend::url('mavitm/estate/messages') ?>"><?= e(trans('backend::lang.form.cancel')) ?></a>
+                    or <a href="<?= Backend::url('mavitm/estate/properties') ?>">Cancel</a>
                 </span>
             </div>
         </div>
@@ -51,6 +43,6 @@
 <?php else: ?>
 
     <p class="flash-message static error"><?= e($this->fatalError) ?></p>
-    <p><a href="<?= Backend::url('mavitm/estate/messages') ?>" class="btn btn-default"><?= e(trans('backend::lang.form.return_to_list')) ?></a></p>
+    <p><a href="<?= Backend::url('mavitm/estate/properties') ?>" class="btn btn-default">Return to properties list</a></p>
 
 <?php endif ?>

@@ -55,7 +55,8 @@
         'realty_id'    => 'Realty',
         'message'      => 'Message',
         'created_at'   => 'Submitted',
-        'realty'       => 'Realty'
+        'realty'       => 'Realty',
+        'call'         => 'Call'
     ],
     'property'  => [
         'title'         => 'Property name',
@@ -78,7 +79,7 @@
         'ui'                => 'Interface',
         'importBootsrap'    => 'Included bootstrap(3.3.7) css and js',
         'importOwl'         => 'Included Owl carousel(1.3.2) css and js',
-        'importFa'          => 'Included Font Awesome(4.7.0) css',
+        'importFa'          => 'Included Font Awesome(5.9.0) css',
         'customcss'         => 'Include custom css',
     ],
     'components' => [

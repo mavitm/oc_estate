@@ -1,6 +1,7 @@
 <?php namespace Mavitm\Estate\Controllers;
 
 use BackendMenu;
+use Mavitm\Estate\Models\Settings;
 use Backend\Classes\Controller;
 
 class Messages extends Controller
@@ -22,5 +23,6 @@ class Messages extends Controller
         parent::__construct();
 
         BackendMenu::setContext('Mavitm.Estate', 'estate', 'messages');
+        $this->vars['relatySettings'] = Settings::instance();
     }
 }

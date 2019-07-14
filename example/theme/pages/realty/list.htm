@@ -1,0 +1,29 @@
+title = "Realty List"
+url = "/realty/list/:page?"
+layout = "default"
+is_hidden = 0
+
+[realty_list]
+pageNumber = "{{ :page }}"
+categoryFilter = "{{ :slug }}"
+itemsPerPage = 15
+categoryPage = "realty/category-list"
+detailPage = "realty"
+searchPage = "realty/list"
+colLg = 3
+colMd = 4
+colSm = 6
+colXs = 12
+
+[realty_category]
+categoryPage = "realty/category-list"
+countSub = 1
+==
+<div class="row">
+    <div class="col-sm-9">
+        {% component 'realty_list' %}
+    </div>
+    <div class="col-sm-3">
+        {% component 'realty_category' %}
+    </div>
+</div>

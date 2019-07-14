@@ -5,7 +5,7 @@ use System\Classes\PluginBase;
 
 class Plugin extends PluginBase
 {
-    public $require = ['RainLab.Translate'];
+    public $require = ['RainLab.Translate', 'GinoPane.AwesomeIconsList'];
 
     public function pluginDetails()
     {
