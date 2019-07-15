@@ -103,7 +103,9 @@
         'categoryDesc'              => 'Category list menu',
         'column'                    => 'info search google Bootstrap 3 grid system 1-12',
         'contactForm'               => 'Contact Form',
-        'contactFormDesc'           => 'Real estate contact form'
+        'contactFormDesc'           => 'Real estate contact form',
+        'popularName'               => 'Most popular realty list',
+        'popularNameDesc'           => 'List most popular items'
 
     ]
 ];

@@ -25,7 +25,8 @@ class Plugin extends PluginBase
             'Mavitm\Estate\Components\Realtylist'    => 'realty_list',
             'Mavitm\Estate\Components\Realtydetail'  => 'realty_detail',
             'Mavitm\Estate\Components\Category'      => 'realty_category',
-            'Mavitm\Estate\Components\ContactForm'       => 'contact_form'
+            'Mavitm\Estate\Components\ContactForm'   => 'contact_form',
+            'Mavitm\Estate\Components\PopularList'   => 'popular_list'
         ];
     }
 

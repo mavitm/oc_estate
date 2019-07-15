@@ -1,0 +1,61 @@
+{% set items = __SELF__.data %}
+
+<div class="row">
+{% for item in __SELF__.data %}
+<div class="col-xs-{{ __SELF__.colXs }} col-sm-{{ __SELF__.colSm }} col-md-{{ __SELF__.colMd }} col-lg-{{ __SELF__.colLg }}">
+    <div class="mygrid gstyle12 mygridFborder mygridborderBottomRed">
+
+
+        <div class="gsHead ilanListHead">
+            <a href="{{ item.url }}">
+                <img alt="{{ item.title|escape }}" src="{{ item.srcimage }}">
+            </a>
+        </div>
+
+        <div class="gsMain">
+            <h1><a href="{{ item.url }}">{{ item.title }}</a></h1>
+            <p>{{ item.CategoryName }}</p>
+            <p>{{ item.address }}</p>
+            <div class="gridPrice">
+                <span class="currentPrice">{{ item.FormatPrice }} <i class="fa fa-{{ currency }}"></i></span>
+            </div>
+            <div class="gridExcerpt hidden">{{ item.excerpt }}</div>
+        </div>
+
+        <div class="gsFooter">
+            <div class="gsView"><i class="fa fa-check"></i> {{ item.status }}</div>
+            <div class="gsMore">
+                <a href="{{ item.url }}"><i class="fa fa-plus"></i></a>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <div class="clearfix"></div>
+
+    </div>
+
+</div>
+{% endfor %}
+</div>
+
+
+<div class="row">
+    <div class="col-md-12">
+        {% if items.lastPage > 1 %}
+        <ul class="pagination">
+            {% if items.currentPage > 1 %}
+            <li><a href="{{ this.page.baseFileName|page({ (pageParam): (products.currentPage-1) }) }}">&larr; {{ 'Prev'|_ }}</a></li>
+            {% endif %}
+
+            {% for page in 1..items.lastPage %}
+            <li class="{{ products.currentPage == page ? 'active' : null }}">
+                <a href="{{ this.page.baseFileName|page({ (pageParam): page }) }}">{{ page }}</a>
+            </li>
+            {% endfor %}
+
+            {% if items.lastPage > items.currentPage %}
+            <li><a href="{{ this.page.baseFileName|page({ (pageParam): (products.currentPage+1) }) }}">{{ 'Next'|_ }} &rarr;</a></li>
+            {% endif %}
+        </ul>
+        {% endif %}
+    </div>
+</div>
