@@ -113,6 +113,8 @@
         'contactForm'               => 'Contact Form',
         'contactFormDesc'           => 'Real estate contact form',
         'popularName'               => 'Most popular realty list',
-        'popularNameDesc'           => 'List most popular items'
+        'popularNameDesc'           => 'List most popular items',
+        'newestName'                => 'Newest realty list',
+        'newestNameDesc'            => 'List newest items'
     ],
 ];
