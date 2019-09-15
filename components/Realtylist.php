@@ -81,6 +81,26 @@ class Realtylist extends ComponentBase
                 'group'             => 'Links',
                 'options'           => $this->getCategoryPageOptions()
             ],
+            'sortField' => [
+                'title'             => 'mavitm.estate::lang.components.sortField',
+                'type'              => 'dropdown',
+                'default'           => 'created_at',
+                'group'             => 'Ranking',
+                'options'           => [
+                    'created_at' => 'Created',
+                    'updated_at' => 'Updated'
+                ],
+            ],
+            'sortType' => [
+                'title'             => 'mavitm.estate::lang.components.sortType',
+                'type'              => 'dropdown',
+                'default'           => 'desc',
+                'group'             => 'Ranking',
+                'options'           => [
+                    'desc' => 'Descending',
+                    'asc'  => 'Ascending'
+                ],
+            ],
             'colLg' => [
                 'title'             => 'col-lg-?',
                 'description'       => 'mavitm.estate::lang.components.column',
@@ -193,8 +213,8 @@ class Realtylist extends ComponentBase
         $param          =[
             'page'          => $this->property("pageNumber",1),
             'perPage'       => $this->itemsPerPage,
-            'sort'          => 'created_at',
-            'order'         => 'desc',
+            'sort'          => $this->property('sortField', 'created_at'),//'created_at',
+            'order'         => $this->property('sortType', 'created_at'), //'desc',
             'category'      => Input::get('category', $this->categoryID),
             'status'        => Input::get('status', null),
             'tags'          => Input::get('tags', null),

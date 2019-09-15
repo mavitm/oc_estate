@@ -108,7 +108,8 @@
         'popularName'               => 'Most popular realty list',
         'popularNameDesc'           => 'List most popular items',
         'newestName'                => 'Newest realty list',
-        'newestNameDesc'            => 'List newest items'
-
+        'newestNameDesc'            => 'List newest items',
+        'sortField'                 => 'Sort field',
+        'sortType'                  => 'Sort type'
     ]
 ];
