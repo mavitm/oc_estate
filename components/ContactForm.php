@@ -4,9 +4,7 @@
 *@url http://www.mavitm.com
 */
 
-use Lang;
-use Session;
-use Validator;
+use Lang, Session, Validator, Flash;
 use Cms\Classes\ComponentBase;
 use Mavitm\Estate\Models\Message;
 use Mavitm\Estate\Models\Realty;
@@ -60,6 +58,11 @@ class ContactForm extends ComponentBase
 
         $input = post();
 
+        if (Session::token() != post('_token')) {
+            Flash::error(Lang::get('mavitm.estate::lang.contactForm.csrf_error'));
+            return false;
+        }
+
         $validator = Validator::make($input, [
             'email' => 'required|email|max:255',
             'phone' => 'required|alpha_num|max:255',
@@ -70,7 +73,8 @@ class ContactForm extends ComponentBase
         if ($validator->fails()) {
             return redirect()->back()->withInput()->withErrors($validator);
         }
-        
+
+        Flash::success(Lang::get('mavitm.estate::lang.contactForm.success'));
         Session::flash('formSuccess', Lang::get('mavitm.estate::lang.contactForm.success'));
 
         $item->messages()->create([

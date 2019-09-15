@@ -54,7 +54,8 @@
     ],
     'contactForm' => [
         'message'      => 'I\'m interested in this property [ :realty ] and I\'d like to know more details.',
-        'success'      => 'Your message has been received!'
+        'success'      => 'Your message has been received!',
+        'csrf_error'   => 'Form session expired! Please refresh the page.',
     ],
     'message' => [
         'name'         => 'Name',

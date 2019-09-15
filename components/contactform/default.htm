@@ -1,4 +1,10 @@
-{{ form_open({ request: __SELF__~'::onHandleForm', class: 'form-horizontal' }) }}
+{% flash %}
+    <div class="alert alert-{{ type }}">
+        {{ message }}
+    </div>
+{% endflash %}
+
+{{ form_open({ request: __SELF__~'::onHandleForm', class: 'form-horizontal', 'data-request-flash':'1' }) }}
 
     <div class="row">
 

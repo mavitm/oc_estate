@@ -65,14 +65,16 @@ class Realtydetail extends ComponentBase
 
     public function onRun()
     {
-        $settings           = Settings::instance();
-        $this->currency     = $this->page['currency']       = $settings->currency;
-        $this->categoryPage = $this->page['categoryPage']   = $this->property('categoryPage');
-        $this->item         = $this->page['item']           = $this->loadItem();
-        
-        $this->updateItemViewCount();
 
-        $settings->_imported($this);
+            $settings = Settings::instance();
+            $this->currency = $this->page['currency'] = $settings->currency;
+            $this->categoryPage = $this->page['categoryPage'] = $this->property('categoryPage');
+            $this->item = $this->page['item'] = $this->loadItem();
+
+            $this->updateItemViewCount();
+
+            $settings->_imported($this);
+
     }
 
     protected function loadItem()
@@ -90,11 +92,15 @@ class Realtydetail extends ComponentBase
 
     protected function updateItemViewCount()
     {
-        if (empty($this->item)) { return; }
+        if (empty($this->item->id)) { return; }
 
-        $this->item->update([
-            'views' => intval($this->item->views) + 1
-        ]);
+        //save vaidate error
+//        $this->item->update([
+//            'views' => intval($this->item->views) + 1
+//        ]);
+
+        $this->item->increment('views');
+
     }
 
 }
