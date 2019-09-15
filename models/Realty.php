@@ -18,6 +18,8 @@ class Realty extends Model
     public $table       = 'mavitm_estate_realty';
     public $implement   = ['@RainLab.Translate.Behaviors.TranslatableModel'];
 
+    protected $fillable = ['views'];
+
     public $rules = [
         'title'     => 'required',
         'slug'      => ['required', 'regex:/^[a-z0-9\/\:_\-\*\[\]\+\?\|]*$/i', 'unique:mavitm_estate_realty'],
@@ -34,7 +36,8 @@ class Realty extends Model
         'updated_at'    => 'Updated',
         'sort_order'    => 'Order',
         'random'        => 'Random',
-        'address'       => 'Address'
+        'address'       => 'Address',
+        'views'         => 'Views'
     );
 
     ############################################################################################################
@@ -227,6 +230,8 @@ class Realty extends Model
         if($order != 'desc'){
             $order = 'asc';
         }
+
+        $query->orderBy($sort, $order);
 
         //$sql = $query->toSql();
         //foreach($query->getBindings() as $binding)

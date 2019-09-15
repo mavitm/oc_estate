@@ -67,6 +67,7 @@ class Settings extends Model
 
         if($this->import_fa){
             $controller->addCss('/plugins/mavitm/estate/assets/css/font-awesome.min.css');
+            $controller->addCss('/plugins/mavitm/estate/assets/css/font-awesome-v4-shims.min.css');
         }
 
         if($this->import_custom){

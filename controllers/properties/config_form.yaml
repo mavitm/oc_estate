@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Property
+
+# Model Form Field configuration
+form: $/mavitm/estate/models/property/fields.yaml
+
+# Model Class name
+modelClass: Mavitm\Estate\Models\Property
+
+# Default redirect location
+defaultRedirect: mavitm/estate/properties
+
+# Create page
+create:
+    title: Create Property
+    redirect: mavitm/estate/properties/update/:id
+    redirectClose: mavitm/estate/properties
+
+# Update page
+update:
+    title: Edit Property
+    redirect: mavitm/estate/properties
+    redirectClose: mavitm/estate/properties
+
+# Preview page
+preview:
+    title: Preview Property

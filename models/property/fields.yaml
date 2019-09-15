@@ -11,10 +11,12 @@ fields:
         type: text
     iconcss:
         label: 'mavitm.estate::lang.property.iconcs'
+        type: awesomeiconslist
+        unicodeValue: false
+        emptyOption: false
+        iconTypes: solid, brands
+        placeholder: Select Icon
         span: auto
-        type: text
-        comment: '<a href="https://fontawesome.com/v4.7.0/icons/" target="_blank">Icons</a>'
-        commentHtml: true
     sort_order:
         label: 'mavitm.estate::lang.property.sortOrder'
         span: auto

@@ -69,6 +69,8 @@ class Realtydetail extends ComponentBase
         $this->currency     = $this->page['currency']       = $settings->currency;
         $this->categoryPage = $this->page['categoryPage']   = $this->property('categoryPage');
         $this->item         = $this->page['item']           = $this->loadItem();
+        
+        $this->updateItemViewCount();
 
         $settings->_imported($this);
     }
@@ -84,6 +86,15 @@ class Realtydetail extends ComponentBase
         }
 
         return $item;
+    }
+
+    protected function updateItemViewCount()
+    {
+        if (empty($this->item)) { return; }
+
+        $this->item->update([
+            'views' => intval($this->item->views) + 1
+        ]);
     }
 
 }
