@@ -3,7 +3,7 @@
 use Schema;
 use October\Rain\Database\Updates\Migration;
 
-class BuilderTableCreateMavitmEstateCategories extends Migration
+class BuilderTableAddAddressToRealty extends Migration
 {
     public function up()
     {
